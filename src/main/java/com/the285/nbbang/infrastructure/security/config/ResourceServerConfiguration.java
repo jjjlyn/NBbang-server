@@ -1,4 +1,4 @@
-package com.the285.nbbang.biz.security;
+package com.the285.nbbang.infrastructure.security.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

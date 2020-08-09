@@ -1,4 +1,4 @@
-package com.the285.nbbang.biz.security;
+package com.the285.nbbang.infrastructure.security.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,6 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
-import static com.the285.nbbang.biz.security.ResourceServerConfiguration.RESOURCE_ID;
 
 @Configuration
 // ensures that you have an authorization server started
@@ -41,6 +40,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Autowired
     private TokenStore mTokenStore;
 
+    @Autowired
+    private SecurityConfiguration mSecurityConfiguration;
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.passwordEncoder(mPasswordEncoder);
@@ -49,11 +51,11 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("nbbang-mobile-client")
+                .withClient(mSecurityConfiguration.getMobileAppClientId())
                 .authorizedGrantTypes("password", "refresh_token")
                 .scopes("mobile_app")
-                .resourceIds(RESOURCE_ID)
-                .secret(mPasswordEncoder.encode("ccUyb6vS4s8nxfbKPCrN"));
+                .resourceIds(ResourceServerConfiguration.RESOURCE_ID)
+                .secret(mPasswordEncoder.encode(mSecurityConfiguration.getMobileAppClientSecret()));
     }
 
     @Override

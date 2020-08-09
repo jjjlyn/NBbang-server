@@ -1,4 +1,4 @@
-package com.the285.nbbang.biz.security;
+package com.the285.nbbang.infrastructure.security;
 
 import com.the285.nbbang.biz.dto.user.User;
 import com.the285.nbbang.biz.dto.user.UserId;
