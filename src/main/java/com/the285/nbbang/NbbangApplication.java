@@ -18,21 +18,4 @@ public class NbbangApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NbbangApplication.class, args);
 	}
-
-	@Bean
-	public UniqueIdGenerator<UUID> uniqueIdGenerator() {
-		return new InMemoryUniqueIdGenerator();
-	}
-
-	@Bean
-	// A PasswordEncoder for encoding a user-supplied password into something that can be safely stored in the database
-	public PasswordEncoder passwordEncoder(){
-		return new BCryptPasswordEncoder();
-	}
-
-	@Bean
-	// A TokenStore for storing generated access and refresh tokens
-	public TokenStore tokenStore(){
-		return new InMemoryTokenStore();
-	}
 }

@@ -1,7 +1,7 @@
 package com.the285.nbbang.infrastructure.security;
 
-import com.the285.nbbang.biz.dto.user.UserService;
-import com.the285.nbbang.biz.dto.user.Users;
+import com.the285.nbbang.user.UserService;
+import com.the285.nbbang.user.Users;
 import com.the285.nbbang.infrastructure.SpringProfiles;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,10 +35,6 @@ public class OAuth2ServerConfigurationTest {
     public void testGetAccessTokenAsAdmin() throws Exception {
         mUserService.createAdmin(Users.ADMIN_EMAIL, Users.ADMIN_PASSWORD);
 
-        // While everything now works fine, it feels wrong to have your production client_id and client_secret in your unit test.
-        // Spring Boot makes externalizing configuration a breeze.
-        // You can define a class to hold your own properties and use them like the built-in properties of Spring Boot,
-        // like server.port for example.
         String clientId = "test-client-id";
         String clientSecret = "test-client-secret";
 

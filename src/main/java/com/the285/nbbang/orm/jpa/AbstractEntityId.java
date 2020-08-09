@@ -1,6 +1,6 @@
 package com.the285.nbbang.orm.jpa;
 
-import com.the285.nbbang.biz.utils.ArtifactForFramework;
+import com.the285.nbbang.utils.ArtifactForFramework;
 
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
@@ -14,7 +14,6 @@ public abstract class AbstractEntityId<T extends Serializable> implements Serial
 
     @ArtifactForFramework
     protected AbstractEntityId(){
-
     }
 
     protected AbstractEntityId(T id){

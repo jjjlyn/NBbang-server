@@ -1,7 +1,8 @@
-package com.the285.nbbang.biz.dto.user;
+package com.the285.nbbang.user;
 
 import com.the285.nbbang.orm.jpa.InMemoryUniqueIdGenerator;
 import com.the285.nbbang.orm.jpa.UniqueIdGenerator;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,6 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import javax.swing.text.html.Option;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Optional;
@@ -45,7 +45,7 @@ public class UserRepositoryTest {
         repository.save(user);
         Optional<User> optional = repository.findByEmailIgnoreCase(user.getEmail());
 
-        assertThat(optional).isNotEmpty().contains(user);
+        Assertions.assertThat(optional).isNotEmpty().contains(user);
     }
 
     @Test
@@ -54,7 +54,7 @@ public class UserRepositoryTest {
         repository.save(user);
         Optional<User> optional = repository.findByEmailIgnoreCase(user.getEmail().toUpperCase(Locale.US));
 
-        assertThat(optional).isNotEmpty().contains(user);
+        Assertions.assertThat(optional).isNotEmpty().contains(user);
     }
 
     @Test
@@ -63,7 +63,7 @@ public class UserRepositoryTest {
         repository.save(user);
         Optional<User> optional = repository.findByEmailIgnoreCase("will.not@find.me");
 
-        assertThat(optional).isEmpty();
+        Assertions.assertThat(optional).isEmpty();
     }
 
     @TestConfiguration

@@ -1,8 +1,10 @@
-package com.the285.nbbang.biz.dto.user;
+package com.the285.nbbang.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -21,5 +23,10 @@ public class UserServiceImpl implements UserService {
         User user = User.createAdmin(mUserRepository.nextId(), email, mPasswordEncoder.encode(password));
 
         return mUserRepository.save(user);
+    }
+
+    @Override
+    public Optional<User> getUser(UserId userId) {
+        return mUserRepository.findById(userId.getId());
     }
 }

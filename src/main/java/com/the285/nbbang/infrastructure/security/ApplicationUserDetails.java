@@ -1,8 +1,8 @@
 package com.the285.nbbang.infrastructure.security;
 
-import com.the285.nbbang.biz.dto.user.User;
-import com.the285.nbbang.biz.dto.user.UserId;
-import com.the285.nbbang.biz.dto.user.UserRole;
+import com.the285.nbbang.user.User;
+import com.the285.nbbang.user.UserId;
+import com.the285.nbbang.user.UserRole;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.Collection;
@@ -24,7 +24,7 @@ public class ApplicationUserDetails extends org.springframework.security.core.us
         return userId;
     }
 
-    // The only actual logic you need to implement is the conversion from UserRole to SimpleGrantedAuthority,
+    // The only actual logic to implement is the conversion from UserRole to SimpleGrantedAuthority,
     // which ensures that Spring Security is aware of the role of each user.
     private static Collection<SimpleGrantedAuthority> createAuthorities(Set<UserRole> roles){
         return roles.stream()

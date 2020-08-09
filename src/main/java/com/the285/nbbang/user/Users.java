@@ -1,4 +1,4 @@
-package com.the285.nbbang.biz.dto.user;
+package com.the285.nbbang.user;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,10 +12,10 @@ public class Users {
     // as decompilation of the class will reveal those password strings.
     // But since this is just for testing, that is not a problem here.
 
-    public static final String ADMIN_EMAIL = "vlzkcb1259@gmail.com";
+    public static final String ADMIN_EMAIL = "1234@gmail.com";
     public static final String ADMIN_PASSWORD = "admin";
 
-    public static final String GENERAL_EMAIL = "prize1142@gmail.com";
+    public static final String GENERAL_EMAIL = "5678@gmail.com";
     public static final String GENERAL_PASSWORD = "general";
 
     private static User ADMIN = User.createAdmin(newRandomId(), ADMIN_EMAIL, PASSWORD_ENCODER.encode(ADMIN_PASSWORD));

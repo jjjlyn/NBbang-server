@@ -1,4 +1,4 @@
-package com.the285.nbbang.biz.utils;
+package com.the285.nbbang.utils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

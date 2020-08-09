@@ -1,4 +1,4 @@
-package com.the285.nbbang.biz.dto.user;
+package com.the285.nbbang.user;
 
 import com.the285.nbbang.orm.jpa.AbstractEntityId;
 

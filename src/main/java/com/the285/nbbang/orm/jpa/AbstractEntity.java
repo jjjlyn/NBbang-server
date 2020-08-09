@@ -1,6 +1,6 @@
 package com.the285.nbbang.orm.jpa;
 
-import com.the285.nbbang.biz.utils.ArtifactForFramework;
+import com.the285.nbbang.utils.ArtifactForFramework;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.MappedSuperclass;

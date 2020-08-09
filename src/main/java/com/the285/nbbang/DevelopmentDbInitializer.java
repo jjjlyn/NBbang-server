@@ -1,6 +1,6 @@
 package com.the285.nbbang;
 
-import com.the285.nbbang.biz.dto.user.UserService;
+import com.the285.nbbang.user.UserService;
 import com.the285.nbbang.infrastructure.SpringProfiles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -32,7 +32,6 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-// Mark the class with @Component so the component scanning picks it up.
 @Profile(SpringProfiles.DEV)
 // The @Profile annotation ensures that this ApplicationRunner only executes if the dev profile is active..
 public class DevelopmentDbInitializer implements ApplicationRunner {
@@ -41,7 +40,6 @@ public class DevelopmentDbInitializer implements ApplicationRunner {
 
     @Autowired
     public DevelopmentDbInitializer(UserService userService){
-        // Inject the UserService interface, which you will use to create the users.
         this.mUserService = userService;
     }
 
@@ -52,6 +50,6 @@ public class DevelopmentDbInitializer implements ApplicationRunner {
 
     private void createTestUsers(){
         // the actual creation of the test user.
-        mUserService.createAdmin("prize1142@gmail.com", "admin");
+        mUserService.createAdmin("12345@gmail.com", "admin");
     }
 }

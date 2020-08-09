@@ -1,4 +1,4 @@
-package com.the285.nbbang.biz.dto.user;
+package com.the285.nbbang.user;
 
 import com.sun.istack.NotNull;
 import com.the285.nbbang.orm.jpa.AbstractEntity;
@@ -7,7 +7,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Collections;
 import java.util.Set;
-import java.util.UUID;
 
 @Entity
 // marks the class as a persistable entity for JPA
