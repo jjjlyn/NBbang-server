@@ -31,7 +31,7 @@ public class Users {
 
     public static User newRandomAdmin(UserId userId){
         String uniqueId = userId.asString().substring(0,5);
-        return User.createAdmin(userId, "user-" + uniqueId + "@google.com", PASSWORD_ENCODER.encode("user"));
+        return User.createAdmin(userId, "admin-" + uniqueId + "@google.com", PASSWORD_ENCODER.encode("admin"));
     }
 
     public static User admin(){

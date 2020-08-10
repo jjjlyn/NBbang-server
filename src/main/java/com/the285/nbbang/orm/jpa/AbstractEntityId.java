@@ -9,7 +9,7 @@ import java.util.Objects;
 import static com.google.common.base.MoreObjects.toStringHelper;
 
 @MappedSuperclass
-public abstract class AbstractEntityId<T extends Serializable> implements Serializable, EntityId<T> {
+public abstract class AbstractEntityId<T extends Serializable> implements EntityId<T> {
     private T id;
 
     @ArtifactForFramework

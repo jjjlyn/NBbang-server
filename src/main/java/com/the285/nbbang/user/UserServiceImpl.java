@@ -27,6 +27,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> getUser(UserId userId) {
-        return mUserRepository.findById(userId.getId());
+        return mUserRepository.findById(userId);
     }
 }

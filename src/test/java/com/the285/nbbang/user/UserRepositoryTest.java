@@ -43,9 +43,13 @@ public class UserRepositoryTest {
     public void testFindByEmail(){
         User user = Users.newRandomAdmin();
         repository.save(user);
-        Optional<User> optional = repository.findByEmailIgnoreCase(user.getEmail());
+        Optional<User> optional = repository.findById(user.getId());
 
         Assertions.assertThat(optional).isNotEmpty().contains(user);
+        System.out.println(user.getId().getId());
+        System.out.println(user.getEmail());
+        System.out.println(user.getPassword());
+
     }
 
     @Test

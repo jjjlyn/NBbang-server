@@ -10,7 +10,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.MoreObjects.toStringHelper;
 
 @MappedSuperclass
-public abstract class AbstractEntity<T extends EntityId> implements Entity<T> {
+public class AbstractEntity<T extends EntityId> implements Entity<T> {
 
     /**
      * Abstract super class for entities.
